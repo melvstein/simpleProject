@@ -1,4 +1,4 @@
-# sampleProject
+# sampleProject (CRUD)
 
 After running migration, run the "php artisan storage:link".
 
