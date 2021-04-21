@@ -8,8 +8,8 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="m-4 shadow overflow-auto border-b border-gray-200 sm:rounded-lg">
+                <div class="bg-white border-b border-gray-200">
+                    <div class="m-0 md:m-4 shadow overflow-auto border-b border-gray-200 sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
                           <thead class="bg-gray-50">
                             <tr>

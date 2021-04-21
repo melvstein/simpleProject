@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="m-4 shadow overflow-auto border-b border-gray-200 sm:rounded-lg">
+                <div class="m-0 md:m-4 shadow overflow-auto border-b border-gray-200 sm:rounded-lg">
                     <table class="min-w-full divide-y divide-gray-200">
                       <thead class="bg-gray-50">
                         <tr>
