@@ -1,4 +1,12 @@
-# SimpleProject(CRUD)
+# SimpleProject(CRUD) by Melvs
 
-After running the "php artisan migrate", run the command "php artisan storage:link".
+cp .env.example -> .env
+
+Run 
+- "composer install"
+- "npm install"
+- "php artisan key:generate"
+- "php artisan storage:link"
+- "php artisan migrate"
+
 After Register and Login, Create Category first before adding products.
