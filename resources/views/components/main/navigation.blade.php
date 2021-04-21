@@ -1,4 +1,4 @@
-<nav class="relative bg-blue-400 px-4">
+<nav class="relative bg-blue-400 px-1 md:px-4">
     <div class="hidden md:flex items-center justify-between">
         <div class="p-4">
             <a href="{{ route('home') }}" class="text-white hover:bg-blue-500 hover:bg-opacity-50 p-4 {{ request()->routeIs('home') ? 'bg-blue-900 bg-opacity-50' : '' }}">Home</a>
@@ -15,8 +15,8 @@
     <div class="block md:hidden">
         <div class="flex items-center justify-between">
             <div class="p-4">
-                <a href="{{ route('home') }}" class="text-white hover:bg-blue-500 hover:bg-opacity-50 p-4 {{ request()->routeIs('home') ? 'bg-blue-900 bg-opacity-50' : '' }}">
-                    SimpleProject
+                <a href="{{ route('home') }}" class="text-white font-semibold text-sm hover:bg-blue-500 hover:bg-opacity-50 p-4 {{ request()->routeIs('home') ? 'bg-blue-900 bg-opacity-50' : '' }}">
+                    SimPro
                 </a>
             </div>
 
