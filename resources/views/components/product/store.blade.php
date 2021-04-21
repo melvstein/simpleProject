@@ -1,9 +1,9 @@
 <div x-data="dropdown()">
-<button x-on:click="open" class="bg-blue-500 hover:bg-blue-400 px-4 py-2 rounded-lg text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+<button @click="open" class="bg-blue-500 hover:bg-blue-400 px-4 py-2 rounded-lg text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
     Add Product
 </button>
-<div x-show="isOpen()" x-on:click.away="close" class="absolute bg-gray-900 bg-opacity-50 min-h-full min-w-full top-0 left-0 flex justify-center p-4">
-    <div x-on:click.away="close" class="relative mt-4 md:mt-18">
+<div x-show="isOpen()" @click.away="close" class="absolute bg-gray-900 bg-opacity-50 min-h-full min-w-full top-0 left-0 flex justify-center p-4">
+    <div @click.away="close" class="relative mt-4 md:mt-18">
         <div class="bg-white shadow rounded-lg h-auto w-auto md:w-96">
             <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
