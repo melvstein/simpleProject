@@ -8,6 +8,7 @@ use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
@@ -51,6 +52,11 @@ class ProductController extends Controller
         /* dd($newFileName); */
 
         $img = Image::make($request->file('image'))->resize(600, 600);
+
+        $path = public_path('storage/products');
+        if(!File::isDirectory($path)){
+            File::makeDirectory($path, 0777, true, true);
+        }
 
         $img->save('storage/products/'.$newFileName, 60);
         /* dd($img); */
