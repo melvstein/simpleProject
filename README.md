@@ -1,4 +1,5 @@
 # sampleProject
 
-After migration, run "php artisan storage:link".
-Create Category first before adding product.
+After running migration, run the "php artisan storage:link".
+
+After register and login, Create Category first before adding product.
