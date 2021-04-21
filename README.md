@@ -1,4 +1,4 @@
-# SimpleProject(CRUD)
+# SimpleProject(CRUD) by Melvs
 
 cp .env.example -> .env
 
