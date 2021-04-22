@@ -154,7 +154,7 @@ class ProductController extends Controller
         try {
             $product = Product::withTrashed()->findOrFail($id);
             $product->restore();
-        } catch (\Exception $th) {
+        } catch (\Exception $exception) {
             throw new NotFoundException("Product");
         }
 
@@ -167,7 +167,7 @@ class ProductController extends Controller
             $product = Product::withTrashed()->findOrFail($id);
             Storage::delete('public/'.$product->image_path);
             $product->forceDelete();
-        } catch (\Throwable $th) {
+        } catch (\Exception $exception) {
             throw new NotFoundException("Product");
         }
 
