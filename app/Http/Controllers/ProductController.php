@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\NotFoundException;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateImageRequest;
 use App\Http\Requests\ProductUpdateRequest;
@@ -150,17 +151,25 @@ class ProductController extends Controller
 
     public function restored($id)
     {
-        $product = Product::withTrashed()->findOrFail($id);
-        $product->restore();
+        try {
+            $product = Product::withTrashed()->findOrFail($id);
+            $product->restore();
+        } catch (\Exception $th) {
+            throw new NotFoundException("Product");
+        }
 
         return redirect()->back()->with('message', "Product {$product->name} restored successfully!");
     }
 
     public function forceDeleted($id)
     {
-        $product = Product::withTrashed()->findOrFail($id);
-        Storage::delete('public/'.$product->image_path);
-        $product->forceDelete();
+        try {
+            $product = Product::withTrashed()->findOrFail($id);
+            Storage::delete('public/'.$product->image_path);
+            $product->forceDelete();
+        } catch (\Throwable $th) {
+            throw new NotFoundException("Product");
+        }
 
         return redirect()->back()->with('message', "Product {$product->name} deleted permanently!");
     }

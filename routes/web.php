@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('products')->name('products.')->group(function () {
         Route::put('image-update/{product}', [ProductController::class, 'updateImage'])->name('updateImage');
-        Route::put('restore-product/{product}', [ProductController::class, 'restored'])->name('restored');
-        Route::delete('delete-product-permanently/{product}', [ProductController::class, 'forceDeleted'])->name('forceDeleted');
+        Route::match(['put', 'get'], 'restore-product/{product}', [ProductController::class, 'restored'])->name('restored');
+        Route::match(['delete', 'get'],'delete-product-permanently/{product}', [ProductController::class, 'forceDeleted'])->name('forceDeleted');
     });
 });
